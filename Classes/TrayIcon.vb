@@ -51,7 +51,7 @@ Public Class TrayIcon
         End If
     End Sub
 
-    Private Function CalculatePosition(ByVal form As Form) As Point
+    Private Shared Function CalculatePosition(ByVal form As Form) As Point
         Return (New System.Drawing.Point(My.Computer.Screen.WorkingArea.Right - form.Width, My.Computer.Screen.WorkingArea.Bottom - form.Height))
     End Function
 

@@ -1,7 +1,7 @@
 Option Strict On
 Option Explicit On
 
-Public Class CustomAutoCompleteCollection
+Friend Class CustomAutoCompleteCollection
     Inherits System.Windows.Forms.AutoCompleteStringCollection
 
     Private _DataSource As New List(Of StringDataBag)

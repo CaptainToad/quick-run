@@ -8,6 +8,7 @@ Partial Class TrayIcon
         If disposing AndAlso components IsNot Nothing Then
             components.Dispose()
         End If
+        _XMLData.Dispose()
         MyBase.Dispose(disposing)
     End Sub
 
@@ -70,28 +71,28 @@ Partial Class TrayIcon
         'uiQuickRunToolStripMenuItem
         '
         Me.uiQuickRunToolStripMenuItem.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.uiQuickRunToolStripMenuItem.Image = Global.QuickRun.My.Resources.Resources.lightning
+        Me.uiQuickRunToolStripMenuItem.Image = Global.Pantheon.Utilities.My.Resources.Resources.lightning
         Me.uiQuickRunToolStripMenuItem.Name = "uiQuickRunToolStripMenuItem"
         Me.uiQuickRunToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.uiQuickRunToolStripMenuItem.Text = "&Quick Run..."
         '
         'uiRunToolStripMenuItem
         '
-        Me.uiRunToolStripMenuItem.Image = Global.QuickRun.My.Resources.Resources.application_lightning
+        Me.uiRunToolStripMenuItem.Image = Global.Pantheon.Utilities.My.Resources.Resources.application_lightning
         Me.uiRunToolStripMenuItem.Name = "uiRunToolStripMenuItem"
         Me.uiRunToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.uiRunToolStripMenuItem.Text = "&Run..."
         '
         'uiOptionsToolStripMenuItem
         '
-        Me.uiOptionsToolStripMenuItem.Image = Global.QuickRun.My.Resources.Resources.database_gear
+        Me.uiOptionsToolStripMenuItem.Image = Global.Pantheon.Utilities.My.Resources.Resources.database_gear
         Me.uiOptionsToolStripMenuItem.Name = "uiOptionsToolStripMenuItem"
         Me.uiOptionsToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.uiOptionsToolStripMenuItem.Text = "&Options"
         '
         'uiAboutToolStripMenuItem
         '
-        Me.uiAboutToolStripMenuItem.Image = Global.QuickRun.My.Resources.Resources.help
+        Me.uiAboutToolStripMenuItem.Image = Global.Pantheon.Utilities.My.Resources.Resources.help
         Me.uiAboutToolStripMenuItem.Name = "uiAboutToolStripMenuItem"
         Me.uiAboutToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.uiAboutToolStripMenuItem.Text = "&About"

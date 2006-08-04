@@ -69,7 +69,7 @@ Partial Class RunTool
         '
         'uiPictureBox
         '
-        Me.uiPictureBox.Image = Global.QuickRun.My.Resources.Resources.textfield_rename
+        Me.uiPictureBox.Image = Global.Pantheon.Utilities.My.Resources.Resources.textfield_rename
         Me.uiPictureBox.Location = New System.Drawing.Point(12, 12)
         Me.uiPictureBox.Name = "uiPictureBox"
         Me.uiPictureBox.Size = New System.Drawing.Size(32, 32)

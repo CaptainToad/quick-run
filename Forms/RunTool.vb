@@ -54,7 +54,7 @@ Public Class RunTool
         Me.uiTextBoxCommand.AutoCompleteCustomSource = _ToolsAutocomplete
     End Sub
 
-    Private Function XMLDataFilePath() As String
+    Private Shared Function XMLDataFilePath() As String
         Dim lReturn As String
 
         lReturn = IO.Path.Combine(My.Application.Info.DirectoryPath, XML_DATA_FILE)
