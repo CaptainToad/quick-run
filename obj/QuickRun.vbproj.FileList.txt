@@ -1,0 +1,13 @@
+bin\Debug\QuickRun.exe
+bin\Debug\QuickRun.pdb
+bin\Debug\QuickRun.xml
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\QuickRun.Resources.resources
+obj\Debug\QuickRun.TrayIcon.resources
+obj\Debug\QuickRun.vbproj.GenerateResource.Cache
+obj\Debug\QuickRun.exe
+obj\Debug\QuickRun.xml
+obj\Debug\QuickRun.pdb
+obj\Debug\QuickRun.Options.resources
+obj\Debug\QuickRun.RunTool.resources
+obj\Debug\QuickRun.RunCommand.resources

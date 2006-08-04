@@ -1,0 +1,43 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+QuickRun
+</name>
+</assembly>
+<members>
+<member name="P:QuickRun.StringDataBag.Value(System.String)">
+	<summary>
+ Retrieve a value with a default empty return value
+ </summary>
+	<param name="key">The key to the collection value</param>
+	<value>System.String</value>
+	<returns>System.String</returns>
+	<remarks></remarks>
+</member><member name="M:QuickRun.StringDataBag.Add(System.String,System.String)">
+	<summary>
+ Add a new value to the collection
+ </summary>
+	<param name="key">The key for retrieving the value</param>
+	<param name="value">The value itself</param>
+</member><member name="T:QuickRun.StringDataBag">
+	<summary>
+ A DataBag class represents a generic collection class for holding string data with a key
+ </summary>
+	<remarks>This is useful for holding data from a database table</remarks>
+</member><member name="P:QuickRun.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:QuickRun.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:QuickRun.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

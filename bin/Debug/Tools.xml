@@ -1,0 +1,52 @@
+<?xml version="1.0" standalone="yes"?>
+<Tools xmlns="http://tempuri.org/Tools.xsd">
+  <QuickRun>
+    <id>0</id>
+    <name>Visual Studio 2005</name>
+    <path>C:\Program Files\Microsoft Visual Studio 8\Common7\IDE\devenv.exe</path>
+    <icon>C:\Program Files\Microsoft Visual Studio 8\Common7\IDE\devenv.exe,0</icon>
+    <shortName>vs8</shortName>
+  </QuickRun>
+  <QuickRun>
+    <id>1</id>
+    <name>NotePad2</name>
+    <path>C:\Downloads\Tools\notepad2\Notepad2.exe</path>
+    <icon>C:\Downloads\Tools\notepad2\Notepad2.exe,0</icon>
+    <shortName>notepad</shortName>
+  </QuickRun>
+  <QuickRun>
+    <id>2</id>
+    <name>Remote Desktop</name>
+    <path>C:\WINDOWS\system32\mstsc.exe</path>
+    <icon>C:\WINDOWS\system32\mstsc.exe,0</icon>
+    <shortName>mstsc</shortName>
+  </QuickRun>
+  <QuickRun>
+    <id>3</id>
+    <name>Mozilla Firefox</name>
+    <path>C:\Program Files\Mozilla Firefox\firefox.exe</path>
+    <icon>C:\Program Files\Mozilla Firefox\firefox.exe,0</icon>
+    <shortName>firefox</shortName>
+  </QuickRun>
+	<QuickRun>
+		<id>4</id>
+		<name>Micrsoft Outlook</name>
+		<path>C:\Program Files\Microsoft Office\OFFICE11\OUTLOOK.EXE</path>
+		<icon>C:\Program Files\Microsoft Office\OFFICE11\OUTLOOK.EXE,0</icon>
+		<shortName>outlook</shortName>
+	</QuickRun>
+	<QuickRun>
+		<id>5</id>
+		<name>Micrsoft Access</name>
+		<path>C:\Program Files\Microsoft Office\OFFICE11\MSACCESS.EXE</path>
+		<icon>C:\Program Files\Microsoft Office\OFFICE11\MSACCESS.EXE,0</icon>
+		<shortName>access</shortName>
+	</QuickRun>
+	<QuickRun>
+		<id>6</id>
+		<name>SQL Server Management Studio</name>
+		<path>C:\Program Files\Microsoft SQL Server\90\Tools\Binn\VSShell\Common7\IDE\SqlWb.exe</path>
+		<icon>C:\Program Files\Microsoft SQL Server\90\Tools\Binn\VSShell\Common7\IDE\SqlWb.exe,0</icon>
+		<shortName>sqlwb</shortName>
+	</QuickRun>
+</Tools>

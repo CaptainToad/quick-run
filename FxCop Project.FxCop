@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FxCopProject Version="1.35" Name="QuickRun FxCop Project">
+ <ProjectOptions>
+  <SharedProject>True</SharedProject>
+  <Stylesheet Apply="False">http://www.gotdotnet.com/team/fxcop//xsl/1.35/FxCopReport.xsl</Stylesheet>
+  <SaveMessages>
+   <Project Status="Active, Excluded, Absent" NewOnly="False" />
+   <Report Status="Active, Excluded, Absent, ExcludedInSource" NewOnly="False" />
+  </SaveMessages>
+  <ProjectFile Compress="True" DefaultTargetCheck="True" DefaultRuleCheck="True" SaveByRuleGroup="" Deterministic="True" />
+  <EnableMultithreadedLoad>True</EnableMultithreadedLoad>
+  <EnableMultithreadedAnalysis>True</EnableMultithreadedAnalysis>
+  <SourceLookup>True</SourceLookup>
+  <AnalysisExceptionsThreshold>10</AnalysisExceptionsThreshold>
+  <RuleExceptionsThreshold>1</RuleExceptionsThreshold>
+  <Spelling Locale="en-gb" />
+  <VersionAware>False</VersionAware>
+  <OverrideRuleVisibilities>False</OverrideRuleVisibilities>
+  <CustomDictionaries SearchFxCopDir="True" SearchUserProfile="True" SearchProjectDir="True" />
+  <SearchGlobalAssemblyCache>True</SearchGlobalAssemblyCache>
+  <DeadlockDetectionTimeout>120</DeadlockDetectionTimeout>
+ </ProjectOptions>
+ <Targets>
+  <Target Name="$(ProjectDir)/bin/Debug/QuickRun.exe" Analyze="True" AnalyzeAllChildren="True" />
+ </Targets>
+ <Rules>
+  <RuleFiles>
+   <RuleFile Name="$(FxCopDir)\Rules\DesignRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\GlobalizationRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\InteroperabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\MobilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\NamingRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PerformanceRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PortabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\SecurityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\UsageRules.dll" Enabled="True" AllRulesEnabled="True" />
+  </RuleFiles>
+  <Groups />
+  <Settings />
+ </Rules>
+ <FxCopReport Version="1.35">
+  <Targets>
+   <Target Name="$(ProjectDir)/bin/Debug/QuickRun.exe">
+    <Modules>
+     <Module Name="quickrun.exe">
+      <Messages>
+       <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Created="2006-08-03 15:53:39Z">
+        <Issue Name="NoAttr">
+         <Item>QuickRun</Item>
+        </Issue>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="QuickRun">
+        <Types>
+         <Type Name="Main">
+          <Messages>
+           <Message TypeName="StaticHolderTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1053" Created="2006-08-03 15:53:39Z">
+            <Issue>
+             <Item>Main</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="AddTool(System.String,System.String,System.String,System.String):System.Void">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2006-08-03 15:53:39Z">
+              <Issue>
+               <Item>Main.AddTool(String, String, String, String):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="CloseXMLData():System.Void">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2006-08-03 15:53:39Z">
+              <Issue>
+               <Item>Main.CloseXMLData():Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="OpenXMLData():System.Void">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2006-08-03 15:53:39Z">
+              <Issue>
+               <Item>Main.OpenXMLData():Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Options">
+          <Members>
+           <Member Name="InitializeComponent():System.Void">
+            <Messages>
+             <Message Id="Startup" TypeName="LiteralsShouldBeSpelledCorrectly" Category="Microsoft.Usage" CheckId="CA2204" Created="2006-08-03 15:53:39Z">
+              <Issue>
+               <Item>Startup</Item>
+               <Item>Startup</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-08-03 15:53:39Z">
+              <Issue>
+               <Item>Options.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Add Tool...</Item>
+              </Issue>
+              <Issue>
+               <Item>Options.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Cancel</Item>
+              </Issue>
+              <Issue>
+               <Item>Options.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Edit Tool...</Item>
+              </Issue>
+              <Issue>
+               <Item>Options.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>OK</Item>
+              </Issue>
+              <Issue>
+               <Item>Options.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Options</Item>
+              </Issue>
+              <Issue>
+               <Item>Options.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>QuickTools</Item>
+              </Issue>
+              <Issue>
+               <Item>Options.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Remove Tool</Item>
+              </Issue>
+              <Issue>
+               <Item>Options.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Start QuickRun at Windows logon</Item>
+              </Issue>
+              <Issue>
+               <Item>Options.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Startup</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="TrayIcon">
+          <Members>
+           <Member Name=".ctor()">
+            <Messages>
+             <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Created="2006-08-03 15:53:39Z">
+              <Issue>
+               <Item>TrayIcon.New()</Item>
+               <Item>&#xD;&#xA;&#xD;&#xA;TrayIcon.New()&#xD;&#xA;TrayIcon.InitializeComponent():Void&#xD;&#xA;TrayIcon.get_uiAboutToolStripMenuItem():ToolStripMenuItem</Item>
+              </Issue>
+              <Issue>
+               <Item>TrayIcon.New()</Item>
+               <Item>&#xD;&#xA;&#xD;&#xA;TrayIcon.New()&#xD;&#xA;TrayIcon.InitializeComponent():Void&#xD;&#xA;TrayIcon.get_uiContextMenuStrip():ContextMenuStrip</Item>
+              </Issue>
+              <Issue>
+               <Item>TrayIcon.New()</Item>
+               <Item>&#xD;&#xA;&#xD;&#xA;TrayIcon.New()&#xD;&#xA;TrayIcon.InitializeComponent():Void&#xD;&#xA;TrayIcon.get_uiExitToolStripMenuItem():ToolStripMenuItem</Item>
+              </Issue>
+              <Issue>
+               <Item>TrayIcon.New()</Item>
+               <Item>&#xD;&#xA;&#xD;&#xA;TrayIcon.New()&#xD;&#xA;TrayIcon.InitializeComponent():Void&#xD;&#xA;TrayIcon.get_uiNotifyIcon():NotifyIcon</Item>
+              </Issue>
+              <Issue>
+               <Item>TrayIcon.New()</Item>
+               <Item>&#xD;&#xA;&#xD;&#xA;TrayIcon.New()&#xD;&#xA;TrayIcon.InitializeComponent():Void&#xD;&#xA;TrayIcon.get_uiOptionsToolStripMenuItem():ToolStripMenuItem</Item>
+              </Issue>
+              <Issue>
+               <Item>TrayIcon.New()</Item>
+               <Item>&#xD;&#xA;&#xD;&#xA;TrayIcon.New()&#xD;&#xA;TrayIcon.InitializeComponent():Void&#xD;&#xA;TrayIcon.get_uiQuickRunToolStripMenuItem():ToolStripMenuItem</Item>
+              </Issue>
+              <Issue>
+               <Item>TrayIcon.New()</Item>
+               <Item>&#xD;&#xA;&#xD;&#xA;TrayIcon.New()&#xD;&#xA;TrayIcon.InitializeComponent():Void&#xD;&#xA;TrayIcon.get_uiRunToolStripMenuItem():ToolStripMenuItem</Item>
+              </Issue>
+              <Issue>
+               <Item>TrayIcon.New()</Item>
+               <Item>&#xD;&#xA;&#xD;&#xA;TrayIcon.New()&#xD;&#xA;TrayIcon.InitializeComponent():Void&#xD;&#xA;TrayIcon.get_uiToolStripMenuItemSep1():ToolStripSeparator</Item>
+              </Issue>
+              <Issue>
+               <Item>TrayIcon.New()</Item>
+               <Item>&#xD;&#xA;&#xD;&#xA;TrayIcon.New()&#xD;&#xA;TrayIcon.InitializeComponent():Void&#xD;&#xA;TrayIcon.get_uiToolStripMenuItemSep2():ToolStripSeparator</Item>
+              </Issue>
+              <Issue>
+               <Item>TrayIcon.New()</Item>
+               <Item>&#xD;&#xA;&#xD;&#xA;TrayIcon.New()&#xD;&#xA;TrayIcon.InitializeComponent():Void&#xD;&#xA;TrayIcon.get_uiToolStripMenuItemSep3():ToolStripSeparator</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="CalculatePosition(System.Windows.Forms.Form):System.Drawing.Point">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2006-08-03 15:53:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>TrayIcon.CalculatePosition(Form):Point</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Dispose(System.Boolean):System.Void">
+            <Messages>
+             <Message TypeName="DisposeMethodsShouldCallBaseClassDispose" Category="Microsoft.Usage" CheckId="CA2215" Created="2006-08-03 15:53:39Z">
+              <Issue>
+               <Item>TrayIcon.Dispose(Boolean):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="InitializeComponent():System.Void">
+            <Messages>
+             <Message Id="System.Windows.Forms.NotifyIcon.set_Text(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Created="2006-08-03 15:53:39Z">
+              <Issue>
+               <Item>TrayIcon.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>NotifyIcon.set_Text(String):Void</Item>
+               <Item>QuickRun</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.Windows.Forms.ToolStripItem.set_Text(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Created="2006-08-03 15:53:39Z">
+              <Issue>
+               <Item>TrayIcon.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>ToolStripItem.set_Text(String):Void</Item>
+               <Item>&amp;About</Item>
+              </Issue>
+              <Issue>
+               <Item>TrayIcon.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>ToolStripItem.set_Text(String):Void</Item>
+               <Item>&amp;Options</Item>
+              </Issue>
+              <Issue>
+               <Item>TrayIcon.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>ToolStripItem.set_Text(String):Void</Item>
+               <Item>&amp;Quick Run...</Item>
+              </Issue>
+              <Issue>
+               <Item>TrayIcon.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>ToolStripItem.set_Text(String):Void</Item>
+               <Item>&amp;Run...</Item>
+              </Issue>
+              <Issue>
+               <Item>TrayIcon.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>ToolStripItem.set_Text(String):Void</Item>
+               <Item>E&amp;xit</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="LoadRegistry(QuickRun.StringDataBag):System.Void">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2006-08-03 15:53:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>TrayIcon.LoadRegistry(StringDataBag):Void</Item>
+              </Issue>
+             </Message>
+             <Message Id="settings" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Created="2006-08-03 15:53:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>settings</Item>
+               <Item>TrayIcon.LoadRegistry(StringDataBag):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+  </Targets>
+  <Rules>
+   <Rule TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811">
+    <Resolution Name="Default">'{0}' appears to have no upstream public or protected callers.</Resolution>
+   </Rule>
+   <Rule TypeName="DisposeMethodsShouldCallBaseClassDispose" Category="Microsoft.Usage" CheckId="CA2215">
+    <Resolution Name="Default">Change {0} so that it calls its base class Dispose method for all code paths. Place the call in a finally block to ensure that resources are cleaned up when an exception is raised.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214">
+    <Resolution Name="Default">'{0}' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: {1}</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303">
+    <Resolution Name="Default">{0} passes a literal as parameter {1} of a call to {2}. Retrieve the following string argument from a resource table instead: '{3}'</Resolution>
+   </Rule>
+   <Rule TypeName="LiteralsShouldBeSpelledCorrectly" Category="Microsoft.Usage" CheckId="CA2204">
+    <Resolution Name="Default">Correct the spelling of the unrecognized token '{0}' in the literal '{1}'.</Resolution>
+   </Rule>
+   <Rule TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014">
+    <Resolution Name="NoAttr">'{0}' should be marked with CLSCompliantAttribute and its value should be true.</Resolution>
+   </Rule>
+   <Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822">
+    <Resolution Name="Default">The 'this' parameter (or 'Me' in VB) of {0} is never used. Mark the member as static (or Shared in VB) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Resolution>
+   </Rule>
+   <Rule TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801">
+    <Resolution Name="Default">Parameter '{0}' of {1} is never used. Remove the parameter or use it in the method body.</Resolution>
+   </Rule>
+   <Rule TypeName="StaticHolderTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1053">
+    <Resolution Name="Default">Remove the public constructors from '{0}'.</Resolution>
+   </Rule>
+  </Rules>
+ </FxCopReport>
+</FxCopProject>
