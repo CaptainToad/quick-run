@@ -1,35 +1,25 @@
 Option Strict On
 Option Explicit On
 
-Imports System.Windows.Forms
-
 Public Class Options
-    Private _Settings As StringDataBag
 
-    Private Sub uiButtonOK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles uiButtonOK.Click
-        Me.DialogResult = System.Windows.Forms.DialogResult.OK
-        Me.Close()
+    Private Sub uiButtonOK_Click(ByVal sender As Object, ByVal e As EventArgs) Handles uiButtonOK.Click
+        DialogResult = System.Windows.Forms.DialogResult.OK
+        Close()
     End Sub
 
-    Private Sub uiButtonCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles uiButtonCancel.Click
-        Me.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Close()
+    Private Sub uiButtonCancel_Click(ByVal sender As Object, ByVal e As EventArgs) Handles uiButtonCancel.Click
+        DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Close()
     End Sub
 
-    Private Sub uiCheckBoxAutoStart_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles uiCheckBoxAutoStart.CheckedChanged
-        _Settings.Value("AutoStart") = Me.uiCheckBoxAutoStart.Checked.ToString
+    Private Sub uiCheckBoxAutoStart_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles uiCheckBoxAutoStart.CheckedChanged
+        Settings.Item("AutoStart") = uiCheckBoxAutoStart.Checked.ToString
     End Sub
 
-    Public Property Settings() As StringDataBag
-        Get
-            Return _Settings
-        End Get
-        Set(ByVal value As StringDataBag)
-            _Settings = value
-        End Set
-    End Property
+    Public Property Settings() As Dictionary(Of String, String)
 
-    Private Sub Options_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Me.uiCheckBoxAutoStart.Checked = CBool(_Settings.Value("AutoStart"))
+    Private Sub Options_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
+        uiCheckBoxAutoStart.Checked = CBool(Settings.Item("AutoStart"))
     End Sub
 End Class

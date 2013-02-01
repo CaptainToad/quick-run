@@ -6,7 +6,7 @@ Option Explicit On
 ''' </summary>
 ''' <remarks>This is useful for holding data from a database table</remarks>
 Public Class StringDataBag
-    Private _Values As New Dictionary(Of String, String)
+    Private ReadOnly _Values As New Dictionary(Of String, String)()
 
     ''' <summary>
     ''' Retrieve a value with a default empty return value
@@ -44,7 +44,7 @@ Public Class StringDataBag
         End Get
     End Property
 
-    Public Function GetEnumerator() As System.Collections.Generic.Dictionary(Of String, String).Enumerator
+    Public Function GetEnumerator() As Dictionary(Of String, String).Enumerator
         Return _Values.GetEnumerator
     End Function
 

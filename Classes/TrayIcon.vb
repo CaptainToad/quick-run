@@ -2,13 +2,13 @@ Option Strict On
 Option Explicit On
 
 Public Class TrayIcon
-    Private _XMLData As New Tools
+    Private ReadOnly _XMLData As New Tools()
 
-    Private Sub uiExitToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles uiExitToolStripMenuItem.Click
+    Private Sub uiExitToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles uiExitToolStripMenuItem.Click
         Application.Exit()
     End Sub
 
-    Private Sub uiRunToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles uiRunToolStripMenuItem.Click
+    Private Sub uiRunToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles uiRunToolStripMenuItem.Click
         Dim lRunForm As New RunCommand
 
         lRunForm.Location = CalculatePosition(lRunForm)
@@ -16,7 +16,7 @@ Public Class TrayIcon
         lRunForm.Show()
     End Sub
 
-    Private Sub uiQuickRunToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles uiQuickRunToolStripMenuItem.Click
+    Private Sub uiQuickRunToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles uiQuickRunToolStripMenuItem.Click
         Dim lRunForm As New RunTool
 
         lRunForm.Location = CalculatePosition(lRunForm)
@@ -24,9 +24,9 @@ Public Class TrayIcon
         lRunForm.Show()
     End Sub
 
-    Private Sub uiNotifyIcon_MouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles uiNotifyIcon.MouseDoubleClick
+    Private Sub uiNotifyIcon_MouseDoubleClick(ByVal sender As Object, ByVal e As MouseEventArgs) Handles uiNotifyIcon.MouseDoubleClick
         If e.Button = MouseButtons.Left Then
-            Me.uiQuickRunToolStripMenuItem.PerformClick()
+            uiQuickRunToolStripMenuItem.PerformClick()
         End If
     End Sub
 
@@ -35,24 +35,24 @@ Public Class TrayIcon
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-        Me.uiAboutToolStripMenuItem.Enabled = False
+        uiAboutToolStripMenuItem.Enabled = False
     End Sub
 
-    Private Sub uiOptionsToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles uiOptionsToolStripMenuItem.Click
+    Private Sub uiOptionsToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles uiOptionsToolStripMenuItem.Click
         Dim lOptions As New Options
-        Dim lSettings As New StringDataBag
+        Dim lSettings As New Dictionary(Of String, String)
 
-        lSettings.Value("AutoStart") = Main.AutoStart.ToString
+        lSettings.Item("AutoStart") = Main.AutoStart.ToString
 
         lOptions.Settings = lSettings
         lOptions.Location = CalculatePosition(lOptions)
         If lOptions.ShowDialog = DialogResult.OK Then
-            Main.AutoStart = CBool(lSettings.Value("AutoStart"))
+            Main.AutoStart = CBool(lSettings.Item("AutoStart"))
         End If
     End Sub
 
     Private Shared Function CalculatePosition(ByVal form As Form) As Point
-        Return (New System.Drawing.Point(My.Computer.Screen.WorkingArea.Right - form.Width, My.Computer.Screen.WorkingArea.Bottom - form.Height))
+        Return (New Point(My.Computer.Screen.WorkingArea.Right - form.Width, My.Computer.Screen.WorkingArea.Bottom - form.Height))
     End Function
 
     Private Sub OpenDataFile()

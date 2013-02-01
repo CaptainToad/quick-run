@@ -5,6 +5,8 @@ Imports Microsoft.Win32
 Imports System.Security.Permissions
 
 Public NotInheritable Class Main
+    Private Const CURRENT_USER_RUN As String = "Software\Microsoft\Windows\CurrentVersion\Run"
+    Private Const QUICKRUN As String = "QuickRun"
 
     Private Sub New()
         '
@@ -23,21 +25,21 @@ Public NotInheritable Class Main
             Dim lKey As RegistryKey
             Dim lReturn As String
 
-            lKey = My.Computer.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Run")
-            lReturn = lKey.GetValue("QuickRun", "").ToString
+            lKey = My.Computer.Registry.CurrentUser.OpenSubKey(CURRENT_USER_RUN)
+            lReturn = lKey.GetValue(QUICKRUN, "").ToString
             lKey.Close()
 
             Return Not String.IsNullOrEmpty(lReturn)
         End Get
         Set(ByVal value As Boolean)
-            Dim lKey As RegistryKey
-
-            lKey = My.Computer.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Run", True)
+            Dim lKey As RegistryKey = My.Computer.Registry.CurrentUser.OpenSubKey(CURRENT_USER_RUN, True)
 
             If value Then
-                lKey.SetValue("QuickRun", Application.ExecutablePath, RegistryValueKind.String)
+                lKey.SetValue(QUICKRUN, Application.ExecutablePath, RegistryValueKind.String)
             Else
-                lKey.DeleteValue("QuickRun")
+                If lKey.GetValue(QUICKRUN) IsNot Nothing Then
+                    lKey.DeleteValue(QUICKRUN)
+                End If
             End If
 
             lKey.Close()
