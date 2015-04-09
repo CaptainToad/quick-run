@@ -1,0 +1,1 @@
+QuickRun is a simple system tray-based power toy which allows users to launch an application from a pre-defined list of favourites or to launch any application, document or web address. It is similar in use to the Windows 'Run...' utility embedded on the Start menu but expanded and enhanced.
